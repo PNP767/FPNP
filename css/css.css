@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.diva{
+    width: 100vw;
+    background: #f00;
+    margin-bottom: 10px;
+}
+div.parent{
+    height: 300px;
+    position: relative;
+}
+div.parent .divb{
+    width: 50vw;
+    background: #ff0;
+    position: absolute;
+    top: 50px;
+   
+    
+}
+.divc{
+    width: 100vw;
+    background: #11b9f1;
+}
+div{
+    height: 100px
+}
+h1{
+    text-align: center;
+}
