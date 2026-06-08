@@ -2,7 +2,8 @@
 	scrollbar-width: thin;
 	scrollbar-color: #b756de #1a1328;
 	caret-color: transparent;
-	/* border: 5px solid #ff0000; */
+	box-sizing: border-box;
+	/* border: 2px solid #fb260f; */
 }
 
 a:focus,
@@ -38,8 +39,9 @@ p {
 
 /* header */
 header .wrapper {
-	/* position: absolute; */
-	position: fixed;
+
+	/* max-width: 600px; */
+	height: auto;
 	z-index: 2;
 	top: 0px;
 	display: flex;
@@ -56,10 +58,11 @@ header .wrapper {
 	backdrop-filter: blur(3.5px);
 	-webkit-backdrop-filter: blur(3.5px);
 	/* border: 1px solid rgba(255, 255, 255, 0.88); */
+	/* border-radius: 16px; */
 }
 
 header .wrapper div.left {
-	margin-left: 120px;
+	margin-left: 20px;
 }
 
 header .wrapper div.left a img {
@@ -83,11 +86,6 @@ header .wrapper div.right ul li {
 	font-size: 24px;
 	margin-right: 10px;
 	padding-right: 20px;
-}
-
-header .wrapper div.right ul li:hover {
-	transform: scale(1.2);
-	transition: all 0.2s ease-in-out;
 }
 
 header .wrapper div.right ul li:hover {
@@ -155,8 +153,9 @@ header .wrapper .menu-toggle.open span:nth-child(3) {
 /* SECTION#MYSELF */
 
 .work {
-	margin-left: 115px;
-	margin-top: 97px;
+	margin: 100px auto 0;
+	padding: 0 15px;
+
 }
 
 section#myself {
@@ -206,14 +205,13 @@ section#myself {
 
 #myself .wrapper .right a img {
 	position: relative;
-	/* right: 50px; */
 	z-index: 1;
-	/* bottom: 250px; */
-	height: 600px;
-	width: 600px;
+	width: 100%;
+	max-width: 600px;
+	height: auto;
 	border-radius: 100%;
-	/* margin-right: 100px; */
 	margin-top: 50px;
+	display: block;
 }
 
 #myself .wrapper .right a:hover {
@@ -257,7 +255,7 @@ section#myself {
 }
 
 .find .soc a {
-	margin-right: 50px;
+	margin-right: 20px;
 }
 
 .find .soc a:hover {
@@ -283,10 +281,11 @@ footer .wrapper {
 	margin-top: 75px;
 	display: flex;
 	justify-content: space-around;
-
+	width: 100%;
 	background-color: #0a0416;
 	color: #fff;
 	font-size: 1.5em;
+
 }
 
 
@@ -306,93 +305,49 @@ footer .wrapper .right p a img:hover {
 
 
 
+@media (max-width: 425px) {
 
-@media (max-width: 1100px) {
-	body {
-		width: 100%;
+	/* * {
+		border: 1px solid red;
+	} */
+	.menu-toggle {
+		color: #fff;
 	}
 
-	header .wrapper {
-		/* flex-wrap: wrap;
-		height: auto; */
-		padding: 10px 20px;
-	}
-
-	header .wrapper div.left {
+	.work {
 		margin-left: 0;
-	}
-
-	header .wrapper div.right {
-		width: 100%;
-	}
-
-	header .wrapper div.right ul {
-		flex-wrap: wrap;
-		justify-content: center;
-		gap: 10px;
-		margin-top: 10px;
-	}
-
-	header .wrapper div.right ul li {
-		font-size: 18px;
-		padding: 5px 10px;
-		margin-right: 0;
-	}
-
-	section#work section#top div.wrapper {
-		flex-wrap: wrap;
-		gap: 30px;
-		padding: 30px 20px;
-	}
-
-	section#work section#top div.wrapper div.left,
-	section#work section#top div.wrapper div.right {
-		flex: 1 1 400px;
-		max-width: 600px;
-	}
-
-	section#work section#top div.wrapper div.left div.wrapper h1 {
-		font-size: 2.2em;
-		text-align: left;
-	}
-
-	section#work section#top div.wrapper div.left div.wrapper p,
-	section#work section#top div.wrapper div.left div.wrapper ul li,
-	.q {
-		font-size: 1.1em;
-	}
-
-	section#work section#top div.wrapper div.right div.wrapper img {
-		width: 100%;
-		max-width: 360px;
-		height: auto;
-	}
-
-	section#work section#center div.wrapper h1 {
-		font-size: 2em;
 		margin-top: 100px;
 	}
 
-	section#work section#center div.wrapper div.skillset div.box,
-	section#work section#center div.wrapper div.tools div.box {
-		width: 180px;
-		height: 180px;
-		margin: 10px;
+	#myself .wrapper {
+		flex-direction: column;
+		align-items: center;
+		gap: 22px;
 	}
 
-	footer .wrapper {
-		flex-wrap: wrap;
+	#myself .wrapper .left p {
+		margin: 0 10px;
 		text-align: center;
-		padding: 30px 20px;
-		gap: 20px;
 	}
-}
 
-@media (max-width: 720px) {
+	#myself .wrapper .right a img {
+		width: 100%;
+		max-width: 260px;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	.find .soc {
+		justify-content: center;
+		gap: 10px;
+		margin-left: 0;
+	}
+
 	header .wrapper {
 		justify-content: space-between;
 		flex-wrap: wrap;
 		align-items: center;
+		padding: 10px 15px;
 	}
 
 	header .wrapper .menu-toggle {
@@ -418,70 +373,112 @@ footer .wrapper .right p a img:hover {
 		display: block;
 	}
 
-	header .wrapper div.right ul {
-		flex-direction: column;
-		align-items: center;
-		gap: 10px;
-		padding: 0;
-	}
-
-	header .wrapper div.right ul li {
-		width: 100%;
-		margin: 0;
-		font-size: 16px;
-		padding: 12px 0;
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
-	}
-
-	header .wrapper div.right ul li:first-child {
-		border-top: none;
-	}
-
-	header .wrapper div.right ul li {
-		margin-right: 0;
-		font-size: 16px;
-	}
-
-	section#work section#top div.wrapper {
-		padding: 20px 15px;
-	}
-
-	section#work section#top div.wrapper div.left div.wrapper h1 {
-		font-size: 1.8em;
-	}
-
-	section#work section#top div.wrapper div.left div.wrapper p,
-	section#work section#top div.wrapper div.left div.wrapper ul li,
-	.q {
-		font-size: 1em;
-	}
-
-	section#work section#center div.wrapper div.skillset,
-	section#work section#center div.wrapper div.tools {
-		flex-direction: column;
-	}
-
-	section#work section#center div.wrapper div.skillset div.box,
-	section#work section#center div.wrapper div.tools div.box {
-		width: 100%;
-		max-width: 300px;
-	}
-
-	footer {
-		width: 100%;
-	}
-
 	footer .wrapper {
-		width: 100%;
 		flex-direction: column;
 		gap: 10px;
 		font-size: 1.2em;
+		width: 100%;
+	}
+}
+
+@media (max-width: 380px) {
+	* {
+		/* border: 2px solid red; */
+	}
+
+	.menu-toggle {
+		color: #fff;
+	}
+
+	header .wrapper {
+		width: 100%;
+	}
+
+	header .wrapper div.left {
+		width: 100%;
+		text-align: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+
+	.work {
+		margin-left: 0;
+		margin-top: 110px;
+	}
+
+	#myself {
+		width: 100%;
+	}
+
+	#myself .wrapper {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+	}
+
+	#myself .wrapper .ban {}
+
+	#myself .wrapper .left h1 {
+		font-size: 1.9em;
+		align-items: center;
+	}
+
+	#myself .wrapper .left p {
+		font-size: 1.12em;
+		margin: 0 12px;
+		text-align: center;
+	}
+
+	#myself .wrapper .right a img {
+		width: 100%;
+		max-width: 240px;
+		height: auto;
+		margin: 0 auto;
+	}
+
+	.find .ban h1 {
+		font-size: 45px;
+	}
+
+	.find .ban p {
+		/* font-size: 22px; */
+		margin-bottom: 70px;
+	}
+
+
+	.find .soc {
+		justify-content: center;
+		gap: 10px;
+		margin-left: 0;
+	}
+
+	.find .soc {}
+
+	footer .wrapper {
+		width: 100%;
 	}
 }
 
 @media (max-width: 320px) {
+	.menu-toggle {
+		color: #fff;
+	}
+
 	header .wrapper {
 		padding: 10px 10px;
+		min-height: 60px;
+
+	}
+
+	header .wrapper div.left {
+		width: 100%;
+		text-align: center;
+	}
+
+	header .wrapper div.left a img {
+		width: 90px;
+		height: auto;
 	}
 
 	header .wrapper div.left,
@@ -501,7 +498,7 @@ footer .wrapper .right p a img:hover {
 
 	.work {
 		margin-left: 0;
-		margin-top: 20px;
+		margin-top: 150px;
 	}
 
 	#myself .wrapper {
@@ -515,28 +512,145 @@ footer .wrapper .right p a img:hover {
 	}
 
 	#myself .wrapper .right a img {
-		width: 80vw;
+		width: 100%;
 		max-width: 260px;
 		height: auto;
+		margin: 0 auto;
+		display: block;
 	}
 
 	#myself .wrapper .left h1 {
-		font-size: 2em;
+		font-size: 1.8rem;
 	}
 
 	#myself .wrapper .left p {
-		font-size: 1.1em;
+		/* font-size: 1.1em; */
 		text-align: center;
+		font-size: 16px;
+		line-height: 1.6;
 	}
 
-	footer {
-		width: 100%;
+	body .work .find .wrapper .ban p {
+		font-size: 23px;
+	}
+
+	body .work .find .wrapper .soc a:nth-child(3n) {
+		margin-right: 0;
+	}
+
+	body .work .find .wrapper .soc a:nth-child(3n) img {
+		margin-right: 0;
+	}
+
+	body .work .find .wrapper .soc a:last-child {
+		margin-right: 5px;
+	}
+
+	body .work .find .wrapper .soc a:last-child img {
+		margin-right: 0;
 	}
 
 	footer .wrapper {
-		width: 100%;
 		flex-direction: column;
 		gap: 10px;
 		font-size: 1.2em;
+		width: 100%;
+	}
+
+
+}
+
+/* ========== Mobile (320 - 430) ========== */
+@media (max-width: 430px) {
+	header .wrapper div.left {
+		width: 100%;
+		text-align: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.work {
+		margin: 100px 15px 0;
+	}
+
+	#myself .wrapper {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	#myself .wrapper .left h1 {
+		font-size: 2rem;
+	}
+
+	#myself .wrapper .left p {
+		font-size: 1rem;
+	}
+
+	#myself .wrapper .right a img {
+		max-width: 280px;
+	}
+
+	header .wrapper div.left {
+		margin-left: 0;
+	}
+}
+
+/* ========== Tablet (768) ========== */
+@media (min-width:431px) and (max-width:768px) {
+
+	.work {
+		margin: 100px 30px 0;
+	}
+
+	#myself .wrapper {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	#myself .wrapper .right a img {
+		max-width: 400px;
+	}
+
+	header .wrapper div.left {
+		margin-left: 20px;
+	}
+
+	header .wrapper div.right ul li {
+		font-size: 18px;
+	}
+}
+
+/* ========== Small Laptop (1024) ========== */
+@media (min-width:769px) and (max-width:1024px) {
+
+	.work {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+
+	header .wrapper div.left {
+		margin-left: 40px;
+	}
+
+	header .wrapper div.right ul li {
+		font-size: 18px;
+	}
+
+	#myself .wrapper .right a img {
+		max-width: 450px;
+	}
+}
+
+/* ========== Desktop (1440+) ========== */
+@media (min-width:1440px) {
+
+	.wrapper {
+		/* max-width: 1400px; */
+		margin: 0 auto;
+	}
+
+	.work {
+		max-width: 1400px;
+		margin: 100px auto 0;
 	}
 }
